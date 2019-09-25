@@ -46,7 +46,7 @@ describe('express app', () => {
     it('if multiple highest letters, it should list as highest only a letter closest to the begining of alphabet', () => {
         return supertest(drillApp)
             .get('/frequency')
-            .query({s: 'dddg773333VR8Aaaaaaaab' })
+            .query({s: 'dddgggg773333VRggg8Aaaagaaaab' })
             .expect(200)
             .then(res => {
                 expect(res.body).to.deep.equal({
@@ -54,7 +54,7 @@ describe('express app', () => {
                     "7": 2,
                     "8": 1,
                     "d": 3,
-                    "g": 1,
+                    "g": 8,
                     "v": 1,
                     "r": 1,
                     "a": 8,
