@@ -67,12 +67,12 @@ describe('express app', () => {
     it('if multiple highest numbers, it should list as highest only the lowest number', () => {
         return supertest(drillApp)
             .get('/frequency')
-            .query({ s: 'dddga77333VR8Aaab333' })
+            .query({ s: 'dddga777777333VR8Aaab333' })
             .expect(200)
             .then(res => {
                 expect(res.body).to.deep.equal({
                     "3": 6,
-                    "7": 2,
+                    "7": 6,
                     "8": 1, 
                     "d": 3,
                     "g": 1,
@@ -81,7 +81,7 @@ describe('express app', () => {
                     "a": 4,
                     "b": 1,
                     "unique": 9,
-                    "average": 2.2222222222222223,
+                    "average": 2.6666666666666665,
                     "highest": "3"})
             })
     })
